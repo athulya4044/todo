@@ -15,15 +15,39 @@ function App() {
 
   function deleteTodo(id) {
     // IMPLEMENT DELETE TODO
+
+    
+    const updatedTodoList = todos.filter((todo) => todo.id !== id);
+   
+    setTodos(updatedTodoList);
+
+    debugger
+
   }
 
   function addTodo(newTodo) {
     // IMPLEMENT ADD TODOS
+
+    const updatedTodoList = [...todos, newTodo];
+    //setTodos()
+
+    setTodos(updatedTodoList);
+
+
+
+
   }
 
   function editTodo(id, updatedTodo) {
     // IMPLEMENT EDIT TODO
-    // setTodos(updatedItem);
+    debugger
+    const updatedItem = todos.map((todo) =>{
+      return todo.id === id ? updatedTodo : todo
+    }
+     
+    );
+
+     setTodos(updatedItem);
   }
 
   return (
